@@ -15,13 +15,19 @@ class CandidateController extends Controller
     //
     public function index(Request $request)
     {
-        if ($request->search != '') {
-            $candidates = Candidate::where('name', 'LIKE', '%' . $request->search . '%')->orWhere('country', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->orderBy('id', 'desc')->with('job')->get();
-        } else {
-            $candidates = Candidate::orderBy('id', 'desc')->with('job')->get();
+        if($request->has('job_id')){
+            if ($request->search != '') {
+                $candidates = Candidate::where([['name', 'LIKE', '%' . $request->search . '%'],['job_id' , '=' , $request->job_id]])->orWhere('country', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->orderBy('id', 'desc')->with('job')->get();
+            } else {
+                $candidates = Candidate::where('job_id' , $request->job_id)->orderBy('id', 'desc')->with('job')->get();
+            }
+        }else{
+            if ($request->search != '') {
+                $candidates = Candidate::where('name', 'LIKE', '%' . $request->search . '%')->orWhere('country', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->orderBy('id', 'desc')->with('job')->get();
+            } else {
+                $candidates = Candidate::orderBy('id', 'desc')->with('job')->get();
+            }
         }
-
-
         return view('admin.candidate.index', compact('candidates'));
     }
     public function show($id)

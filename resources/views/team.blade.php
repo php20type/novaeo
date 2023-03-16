@@ -138,20 +138,6 @@
                             <div class="team-box">
                                 <div class="team-box-img">
                                     <div class="team-member-img">
-                                        <img src="{{ asset('assets/front/img/team-img-6.png')}}" />
-                                    </div>
-
-                                </div>
-                                <div class="team-box-content">
-                                    <h3>Cristo Ortegon</h3>
-                                    <p>Procurement Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="team-box">
-                                <div class="team-box-img">
-                                    <div class="team-member-img">
                                         <img src="{{ asset('assets/front/img/team-img-7.png')}}" />
                                     </div>
 
@@ -435,20 +421,6 @@
                             </div>
                             <div class="team-box-content">
                                 <h3>Lan Amaranto</h3>
-                                <p>Copywriter</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-box">
-                            <div class="team-box-img">
-                                <div class="team-member-img">
-                                    <img src="{{ asset('assets/front/img/michell.png')}}" />
-                                </div>
-
-                            </div>
-                            <div class="team-box-content">
-                                <h3>Michelle</h3>
                                 <p>Copywriter</p>
                             </div>
                         </div>

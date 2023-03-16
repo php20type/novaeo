@@ -2532,8 +2532,10 @@ div#upload_video_popup .popup-btn a {
 }
 
 .recruiter-box-block-sec ul li a {
-        display: flex;
+    /* display: flex; */
+    font-weight: 400;
     align-items: center;
+    color:#787878;
 }
 
 .recruiter-box-block-sec ul li a svg {
